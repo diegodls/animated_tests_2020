@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'react-native'
 import styled from 'styled-components';
-import Animated, { useCode, block, cond, eq, set, interpolate, Extrapolate, Value } from 'react-native-reanimated';
+import Animated, { useCode, block, cond, eq } from 'react-native-reanimated';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
-import { usePanGestureHandler, withDecay, withOffset, diffClamp, timing } from 'react-native-redash';
+import { usePanGestureHandler, withDecay, withOffset, diffClamp, timing, mix, withTransition } from 'react-native-redash';
 import { Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('screen');
@@ -31,7 +31,7 @@ const DragDropComponent = () => {
     color: #fc3a52;
   `;
 
-const AnimatedText = Animated.createAnimatedComponent(Text);
+  const AnimatedText = Animated.createAnimatedComponent(Text);
   /* END - COMPONENTS STUFF */
 
   /* START - ANIMATION STUFF */
@@ -57,7 +57,8 @@ const AnimatedText = Animated.createAnimatedComponent(Text);
   }), 0, width - radius);
 
   const zIndex = cond(eq(state, State.ACTIVE), 100, 1);
-  const scale = cond(eq(state, State.ACTIVE), 1.5, 1);
+  const progress = withTransition(eq(state, State.ACTIVE));
+  const scale = mix(progress, 1, 1.2);
 
   const [buttonText, setButtonText] = useState('Drag');
 
@@ -66,8 +67,8 @@ const AnimatedText = Animated.createAnimatedComponent(Text);
   /* END - ANIMATION STUFF */
   return (
     <PanGestureHandler {...gestureHandler}>
-      <AnimatedCardShape style={{ zIndex, transform: [{ translateY }, { translateX }] }}>
-        <AnimatedText style={{ transform: [{ scale }] }}>{buttonText}</AnimatedText>
+      <AnimatedCardShape style={{ zIndex, transform: [{ translateY }, { translateX }, { scale }] }}>
+        <AnimatedText>{buttonText}</AnimatedText>
       </AnimatedCardShape>
     </PanGestureHandler>
 
