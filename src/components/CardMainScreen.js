@@ -25,7 +25,6 @@ import {
 } from 'react-native-redash';
 
 const CardMainScreen = (props) => {
-
   const [item] = useState(props.item);
   const [pairOrOdd] = useState(props.pairOrOdd);
   const COLOR = pairOrOdd ? `#e30092` : `#fc3a52`;
