@@ -74,7 +74,6 @@ const ButtonInter = ({ icon }) => {
 
     /* END ANIMATION STUFF */
 
-
     return (
         <TapGestureHandler {...tapGestureHandler}>
             <Animated.View style={styles.container}>
