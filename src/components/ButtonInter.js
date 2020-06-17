@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import {
     View,
     StyleSheet,
+    ToastAndroid
 } from 'react-native';
 import Animated, {
     interpolate,
@@ -9,12 +10,11 @@ import Animated, {
     useCode,
     cond,
     eq,
-    set,
-    not,
     block,
     sub,
     divide,
-    call
+    call,
+    Easing,
 } from 'react-native-reanimated';
 import {
     State,
@@ -22,54 +22,61 @@ import {
 } from 'react-native-gesture-handler';
 import {
     onGestureEvent,
-    withTimingTransition,
+    timing,
 } from 'react-native-redash';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 
 const SQUARE_SIZE = 200;
-const CIRCLE_RADIUS = SQUARE_SIZE / 2;
+const CIRCLE_RADIUS = SQUARE_SIZE - 50;
 const ButtonInter = ({ icon }) => {
 
     /* START ANIMATION STUFF */
-    const tapClick = new Value(0);
+
     const tapState = useRef(new Value(State.UNDETERMINED)).current;
     const tapFocal = useRef({ x: new Value(0), y: new Value(0) }).current;
+
     const tapGestureHandler = onGestureEvent({
         state: tapState,
         x: tapFocal.x,
         y: tapFocal.y
     });
 
-    const transition = withTimingTransition(tapClick);
-    const translateX = new Value(0);
-    const translateY = new Value(0);
+    const translateX = cond(eq(tapState, State.END), sub(tapFocal.x, divide(CIRCLE_RADIUS, 2)));
+    const translateY = cond(eq(tapState, State.END), sub(tapFocal.y, divide(CIRCLE_RADIUS, 2)));
+
+    const transition = cond(eq(tapState, State.END), timing({
+        duration: 500,
+        from: 0,
+        to: 1,
+        easing: Easing.linear,
+    }));
 
     const scale = interpolate(transition, {
         inputRange: [0, 1],
         outputRange: [0, 3]
     });
 
-    //fazer um 'opacity_in' usando o abaixo e um 'opacity_out' onde não tem opacity, ai quando clicar usa o 'opacity_in' e soltar, usa o 'opacity_out'
     const opacity = interpolate(transition, {
         inputRange: [0, 0.5, 1],
         outputRange: [0, 0.5, 0]
     });
 
     useCode(() => block([
-        cond(eq(tapState, State.END), set(tapClick, not(tapClick))),
-        cond(eq(tapState, State.END), set(translateX, sub(tapFocal.x, divide(CIRCLE_RADIUS, 2)))),
-        cond(eq(tapState, State.END), set(translateY, sub(tapFocal.y, divide(CIRCLE_RADIUS, 2)))),
-        cond(eq(tapClick, 1), call([], () => (console.log('clicou')))),
+        cond(eq(transition, 1),
+            call([], () => (
+                ToastAndroid.showWithGravity(`Clicou em: ${icon}`,
+                    ToastAndroid.SHORT,
+                    ToastAndroid.BOTTOM
+                )
+            ))),
+
     ]), [tapState]);
 
     /* END ANIMATION STUFF */
 
 
     return (
-        //<TouchableWithoutFeedback onPress={() => setOpen((prev) => !prev)}>
-        <TapGestureHandler
-            {...tapGestureHandler}
-        >
+        <TapGestureHandler {...tapGestureHandler}>
             <Animated.View style={styles.container}>
                 <Animated.View style={[
                     styles.animatedCircle, {
@@ -81,11 +88,10 @@ const ButtonInter = ({ icon }) => {
                         ]
                     }]} />
                 <View style={styles.circleContainer}>
-                    <IconFA name={icon} size={CIRCLE_RADIUS / 2} />
+                    <IconFA name={icon} size={CIRCLE_RADIUS / 2} color={'#333'} />
                 </View>
             </Animated.View>
         </TapGestureHandler>
-        //</TouchableWithoutFeedback>
     );
 }
 
@@ -100,6 +106,12 @@ const styles = StyleSheet.create({
         elevation: 10,
 
     },
+    animatedCircle: {
+        width: CIRCLE_RADIUS,
+        height: CIRCLE_RADIUS,
+        backgroundColor: '#FFFFFF',
+        borderRadius: CIRCLE_RADIUS / 2,
+    },
     circleContainer: {
         width: CIRCLE_RADIUS,
         height: CIRCLE_RADIUS,
@@ -110,12 +122,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: SQUARE_SIZE / 2 - CIRCLE_RADIUS / 2,
         left: SQUARE_SIZE / 2 - CIRCLE_RADIUS / 2,
-    },
-    animatedCircle: {
-        width: CIRCLE_RADIUS,
-        height: CIRCLE_RADIUS,
-        backgroundColor: '#FFFFFF',
-        borderRadius: CIRCLE_RADIUS / 2,
     },
     textButton: {
         fontSize: 40,
