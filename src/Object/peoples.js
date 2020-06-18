@@ -16,7 +16,8 @@ export const staticPeoples =
     [
         {
             id: 1,
-            name: 'Alberto Roberto',
+            name: 'Alberto Osbourne',
+            email: 'AlbertoO9876054321@test.com',
             image: 1,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 30,
@@ -24,7 +25,8 @@ export const staticPeoples =
         },
         {
             id: 2,
-            name: 'Hannah Tanaka',
+            name: 'Hannah Wiliams',
+            email: 'HannahW9876054321@test.com',
             image: 2,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Atirei o pau no gatis, per gatis num morreus. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Si num tem leite então bota uma pinga aí cumpadi. Diuretics paradis num copo é motivis de denguis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Casamentiss faiz malandris se pirulitá. A ordem dos tratores não altera o pão duris. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Per aumento de cachacis, eu reclamis. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.',
             age: 32,
@@ -32,7 +34,8 @@ export const staticPeoples =
         },
         {
             id: 3,
-            name: 'Djokovich Stein',
+            name: 'Djokovich Shadown',
+            email: 'DjokovichS9876054321@test.com',
             image: 3,
             'description': 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 23,
@@ -40,7 +43,8 @@ export const staticPeoples =
         },
         {
             id: 4,
-            name: 'Skylar Terrance',
+            name: 'Skylar Turunen',
+            email: 'SkylarT9876054321@test.com',
             image: 4,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 26,
@@ -48,7 +52,8 @@ export const staticPeoples =
         },
         {
             id: 5,
-            name: 'Dion Mustane',
+            name: 'Dion Mustaine',
+            email: 'DionM9876054321@test.com',
             image: 5,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 35,
@@ -56,7 +61,8 @@ export const staticPeoples =
         },
         {
             id: 6,
-            name: 'Marie Kovichenko',
+            name: 'Marie Simons',
+            email: 'MarieS9876054321@test.com',
             image: 6,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 20,
@@ -64,7 +70,8 @@ export const staticPeoples =
         },
         {
             id: 7,
-            name: 'Clovis Matias',
+            name: 'Corey Sevastião',
+            email: 'CoreyS9876054321@test.com',
             image: 7,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 82,
@@ -72,7 +79,8 @@ export const staticPeoples =
         },
         {
             id: 8,
-            name: 'Clementice Istor',
+            name: 'Clementice Lee',
+            email: 'ClementiceI9876054321@test.com',
             image: 8,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 80,
@@ -80,7 +88,8 @@ export const staticPeoples =
         },
         {
             id: 9,
-            name: 'Roulo Almen',
+            name: 'Roulo Taylor',
+            email: 'RouloT9876054321@test.com',
             image: 9,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 40,
@@ -88,7 +97,8 @@ export const staticPeoples =
         },
         {
             id: 10,
-            name: 'Terice Manei',
+            name: 'Terice Gossow',
+            email: 'TericeM9876054321@test.com',
             image: 10,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 22,
@@ -96,7 +106,8 @@ export const staticPeoples =
         },
         {
             id: 11,
-            name: 'Albert Lince',
+            name: 'Albert Young',
+            email: 'AlbertL9876054321@test.com',
             image: 11,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 24,
@@ -104,7 +115,8 @@ export const staticPeoples =
         },
         {
             id: 12,
-            name: 'Jhoana May',
+            name: 'Simone May',
+            email: 'SimoneM9876054321@test.com',
             image: 12,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
             age: 23,

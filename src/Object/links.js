@@ -1,34 +1,39 @@
 export const links = [
-     {
+    {
         id: 1,
         title: 'Drag and Drop',
-        subTitle:'PanGesture',
+        subTitle: 'PanGesture/styled',
         navigation: 'DragDropScreen'
     }, {
         id: 2,
         title: 'Slider',
-        subTitle:'PanGesture',
+        subTitle: 'PanGesture/styled',
         navigation: 'SliderScreen'
     }, {
         id: 3,
         title: 'FlatList Wallet',
-        subTitle:'PanGesture',
-        navigation: 'FlatListWalletScreen'    
+        subTitle: 'PanGesture/styled',
+        navigation: 'FlatListWalletScreen'
     }, {
         id: 4,
-        title: 'Button',
-        subTitle:'TapGesture',
-        navigation: 'ButtonScreen'
+        title: 'Tap Animation',
+        subTitle: 'TapGesture',
+        navigation: 'TapAnimation'
     }, {
         id: 5,
         title: 'Tab Order',
-        subTitle:'PanGesture',
+        subTitle: 'PanGesture',
         navigation: 'TabOrderScreen'
     }, {
         id: 6,
         title: 'Long Tap',
-        subTitle:'TapGesture',
+        subTitle: 'TapGesture',
         navigation: 'LongTapScreen'
+    }, {
+        id: 7,
+        title: 'Swipe To Remove',
+        subTitle: 'PanGesture',
+        navigation: 'SwipeToRemove'
     }
 ]
 

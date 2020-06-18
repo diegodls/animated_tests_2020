@@ -8,9 +8,10 @@ import MainScreen from '../MainScreen/MainScreen';
 import DragDropScreen from '../components/DragAndDrop/DragDropScreen';
 import SliderScreen from '../components/Slider/SliderScreen';
 import FlatListWalletScreen from '../components/FlatListWallet/FlatListWalletScreen';
-import ButtonScreen from '../components/ButtonAnimation/ButtonScreen';
+import TapAnimation from '../components/TapAnimation/TapAnimationScreen';
 import TabOrderScreen from '../components/TabOrder/TabOrderScreen';
 import LongTapScreen from '../components/LongPress/LongTapScreen';
+import SwipeToRemove from '../components/SwipeToRemove/SwipeToRemoveScreen';
 
 
 //criação da stack principal
@@ -52,10 +53,10 @@ export default function MyStack() {
                     }}
                 />
                 <Stack.Screen
-                    name='ButtonScreen'
-                    component={ButtonScreen}
+                    name='TapAnimation'
+                    component={TapAnimation}
                     options={{
-                        title: 'ButtonScreen'
+                        title: 'Tap Animation'
                     }}
                 />
                 <Stack.Screen
@@ -70,6 +71,13 @@ export default function MyStack() {
                     component={LongTapScreen}
                     options={{
                         title: 'LongTapScreen'
+                    }}
+                />
+                <Stack.Screen
+                    name='SwipeToRemove'
+                    component={SwipeToRemove}
+                    options={{
+                        title: 'SwipeToRemove'
                     }}
                 />
             </Stack.Navigator>
