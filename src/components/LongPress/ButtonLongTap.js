@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import CircularProgressComponent from '../components/CircularProgress/CircularProgressComponent';
+import CircularProgressComponent from '../CircularProgress/CircularProgressComponent';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import Animated, { useCode, cond, eq, call, block } from 'react-native-reanimated';
 import { mix } from 'react-native-redash';

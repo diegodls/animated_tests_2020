@@ -4,8 +4,6 @@
 
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import Navigator from './src/navigation/Navigator'
-import LongTapScreen from './src/screens/LongTapScreen'
-
+import Navigator from './src/Navigation/Navigator'
 
 AppRegistry.registerComponent(appName, () => Navigator);

@@ -4,13 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 //import das telas usadas na navegação
-import MainScreen from '../screens/MainScreen';
-import DragDropScreen from '../screens/DragDropScreen';
-import SliderScreen from '../screens/SliderScreen';
-import FlatListWalletScreen from '../screens/FlatListWalletScreen';
-import ButtonScreen from '../screens/ButtonScreen';
-import TabOrderScreen from '../screens/TabOrderScreen';
-import LongTapScreen from '../screens/LongTapScreen';
+import MainScreen from '../MainScreen/MainScreen';
+import DragDropScreen from '../components/DragAndDrop/DragDropScreen';
+import SliderScreen from '../components/Slider/SliderScreen';
+import FlatListWalletScreen from '../components/FlatListWallet/FlatListWalletScreen';
+import ButtonScreen from '../components/ButtonAnimation/ButtonScreen';
+import TabOrderScreen from '../components/TabOrder/TabOrderScreen';
+import LongTapScreen from '../components/LongPress/LongTapScreen';
 
 
 //criação da stack principal

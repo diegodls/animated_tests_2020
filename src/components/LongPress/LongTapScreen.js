@@ -1,11 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import { State, TapGestureHandler } from 'react-native-gesture-handler';
-import Animated, { Value, eq, cond, useCode, set } from 'react-native-reanimated';
+import Animated, { Value, eq, cond, } from 'react-native-reanimated';
 
-import ReloadButton from '../components/ReloadButton';
-import { onGestureEvent, withTransition, timing, mix, use } from 'react-native-redash';
-import ButtonLongTap from '../components/ButtonLongTap';
+import ReloadButton from '../ReloadButtons/ReloadButton';
+import { onGestureEvent, withTransition, mix } from 'react-native-redash';
+import ButtonLongTap from './ButtonLongTap';
 
 
 const BACKGROUND_COLOR = '#fff3cd';

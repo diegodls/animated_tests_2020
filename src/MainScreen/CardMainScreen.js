@@ -14,6 +14,7 @@ import Animated, {
   call,
   Easing,
 } from 'react-native-reanimated';
+
 import {
   State,
   TapGestureHandler,

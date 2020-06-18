@@ -2,10 +2,9 @@ import React from 'react';
 import { FlatList } from 'react-native'
 import styled from 'styled-components';
 
-
-import { links } from '../obj/links'
-import ReloadButtonStyled from '../components/ReloadButtonStyled'
-import CardMainScreen from '../components/CardMainScreen'
+import { links } from '../Object/links'
+import ReloadButtonStyled from '../components/ReloadButtons/ReloadButtonStyled'
+import CardMainScreen from './CardMainScreen'
 
 const BACKGROUND_COLOR = '#0b0b0d';
 

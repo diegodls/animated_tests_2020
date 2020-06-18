@@ -1,16 +1,15 @@
 /*
 NOTAS:
  1 - Este exemplo faz o uso da "Vanilla" para fazer as animações, sistema nativo do react-native e não do reanimated devido a problemas do reanimated com o android nessa aplicação
-
- */
+*/
 
 import React from 'react';
 import styled from 'styled-components';
 import { FlatList, Animated, Dimensions } from 'react-native';
-import ReloadButtonStyled from '../components/ReloadButtonStyled';
+import ReloadButtonStyled from '../ReloadButtons/ReloadButtonStyled';
 
-import CardFlatListWalletScreen from '../components/CardFlatListWalletScreen'
-import { generatePosts, staticPosts } from '../obj/posts'
+import CardFlatListWalletScreen from './CardFlatListWalletScreen'
+import { generatePosts } from '../../Object/posts'
 
 const BACKGROUND_COLOR = '#e8e4e1';
 const { height: WINDOW_HEIGHT, width: WINDOW_WIDTH } = Dimensions.get('screen');

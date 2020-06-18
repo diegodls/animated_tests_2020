@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Dimensions } from 'react-native'
 import styled from 'styled-components';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
@@ -17,20 +17,21 @@ const Slider = () => {
 
     /* START - ANIMATION STUFF */
 
-    const state = new Value(State.UNDETERMINED);
-    const translationX = new Value(0);
-    const gestureHandler = onGestureEvent({ state, translationX });
-    const x = diffClamp(withOffset(translationX, state), 0, SLIDER_WIDTH);
-    const translateX = sub(x, (ICON_SIZE / 2));
-    const rotateZ = interpolate(x, {
+    const state = useRef(new Value(State.UNDETERMINED)).current;
+    const translationX = useRef(new Value(0)).current;
+    const gestureHandler = useRef(onGestureEvent({ state, translationX })).current;
+    const x = useRef(diffClamp(withOffset(translationX, state), 0, SLIDER_WIDTH)).current;
+    const translateX = useRef(sub(x, (ICON_SIZE / 2))).current;
+    const rotateZ = useRef(interpolate(x, {
         inputRange: [0, SLIDER_WIDTH], //controla o tamanho do percurso
         outputRange: [0, 2 * Math.PI] //controla a quantidade de rotações que será feita com base no percurso do inputRange
-    })
+    })).current;
 
-    const scaleX = interpolate(x, {
+    const scaleX = useRef(interpolate(x, {
         inputRange: [0, SLIDER_WIDTH], //controla o tamanho do percurso
         outputRange: [0, SLIDER_WIDTH] //controla o tamanho da escala de 0% à 100%, sendo o 0% = 0px e 100% = {SLIDER_WIDTH}px, pode ser usado para outras medidas
-    })
+    })).current;
+    
     const value = round(multiply(divide(x, SLIDER_WIDTH), 100));
     const text = concat(value);
 
@@ -46,17 +47,8 @@ const Slider = () => {
 
     /* START - JAVASCRIPT STUFF */
     function simpleFunction(value) {
-        console.log('value');
-        console.log(value);
-        console.log('gestureHandler');
-        console.log(gestureHandler);
-        console.log('x');
-        console.log(x);
-        console.log('translateX');
-        console.log(translateX);
-        console.log('rotateZ');
-        console.log(rotateZ);
-        //alert(`Valor selecionado: ${value}`);
+        //use esta função para quaisquer fins   
+        console.log(value)   ;
     }
     /* END - JAVASCRIPT STUFF */
 

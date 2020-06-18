@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReloadButtonStyled from '../components/ReloadButtonStyled';
-import DragDropComponent from '../components/DragDropComponent';
+import ReloadButtonStyled from '../ReloadButtons/ReloadButtonStyled';
+import DragDropComponent from './DragDropComponent';
 
 const BACKGROUND_COLOR = '#0b0b0d';
 

@@ -10,9 +10,9 @@ import { Value } from 'react-native-reanimated';
 
 
 
-import ReloadButton from '../components/ReloadButton';
-import CardTabOrder, { CARD_WIDTH, CARD_HEIGHT, ITEM_COLUMMS } from '../components/CardTabOrder';
-import { generatePosts } from '../obj/posts';
+import ReloadButton from '../ReloadButtons/ReloadButton';
+import CardTabOrder, { CARD_WIDTH, CARD_HEIGHT, ITEM_COLUMMS } from './CardTabOrder';
+import { generatePosts } from '../../Object/posts';
 
 const BACKGROUND_COLOR = '#162447'
 const TabOrderScreen = () => {

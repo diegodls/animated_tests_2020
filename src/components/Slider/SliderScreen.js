@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ReloadButtonStyled from '../components/ReloadButtonStyled'
-import SliderComponent from '../components/SliderComponent'
+import ReloadButtonStyled from '../ReloadButtons/ReloadButtonStyled'
+import SliderComponent from './SliderComponent'
 
 const BACKGROUND_COLOR = '#222831';
 
@@ -25,6 +25,8 @@ const Slider = () => {
             <StatusBar barStyle={'light-content'} backgroundColor={BACKGROUND_COLOR} />
             <ReloadButtonStyled />
             <Container>
+                <SliderComponent />               
+                <SliderComponent />               
                 <SliderComponent />               
             </Container>
         </>

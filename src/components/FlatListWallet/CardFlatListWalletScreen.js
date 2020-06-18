@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Animated } from 'react-native';
 
 
-import { selectPostImage } from '../obj/posts'
+import { selectPostImage } from '../../Object/posts'
 
 const CardFlatListWalletScreen = (props) => {
 

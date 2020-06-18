@@ -5,7 +5,6 @@ import {
     StyleSheet,
     Image
 } from 'react-native';
-import { selectPostImage } from '../obj/posts'
 import Animated, {
     Value,
     add,
@@ -26,6 +25,7 @@ import {
     withSpringTransition,    
 } from 'react-native-redash';
 
+import { selectPostImage } from '../../Object/posts'
 
 export const CARD_WIDTH = 200;
 export const CARD_HEIGHT = 200;

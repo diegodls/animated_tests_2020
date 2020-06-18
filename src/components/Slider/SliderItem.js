@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { State } from 'react-native-gesture-handler';
 import Animated, { cond, eq, } from 'react-native-reanimated';
@@ -7,7 +7,7 @@ import IconFA from 'react-native-vector-icons/FontAwesome'
 
 const SliderComponent = (props) => {
 
-    const state = props.state;
+    const state = useRef(props.state).current;
     const ICON_SIZE = props.size;
 
     /* START - ANIMATION STUFF */

@@ -5,8 +5,8 @@ import {
     StyleSheet,
 } from 'react-native';
 
-import ReloadButton from '../components/ReloadButton';
-import ButtonInter from '../components/ButtonInter'
+import ReloadButton from '../ReloadButtons/ReloadButton';
+import ButtonInter from './ButtonInter'
 
 const BACKGROUND_COLOR = '#e8e4e1';
 

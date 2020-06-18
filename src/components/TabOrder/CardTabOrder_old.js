@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 
-import { selectPostImage } from '../obj/posts'
+import { selectPostImage } from '../../Object/posts'
 import Animated, { add, cond, eq, block, Value, set, useCode, divide, floor, multiply, max, and, Clock, Easing, neq, not, clockRunning, startClock, stopClock } from 'react-native-reanimated';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
 import { usePanGestureHandler, timing } from 'react-native-redash';
