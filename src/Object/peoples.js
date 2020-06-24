@@ -70,7 +70,7 @@ export const staticPeoples =
         },
         {
             id: 7,
-            name: 'Corey Sevastião',
+            name: 'Corey Sebastião',
             email: 'CoreyS9876054321@test.com',
             image: 7,
             description: 'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.',
@@ -194,13 +194,13 @@ export function selectPeopleImage(image) {
 
 export function generatePeoples(quant) {
 
-    var quantPeople = staticPeoples.length;
+    var quantPeople = staticPeoples.length - 1;
     var minPeople = 1;
+    var randomPeoples = [];
 
     for (let i = 0; i < quant; i++) {
         var randomPeopleNum = Math.floor(Math.random() * (quantPeople - minPeople + 1)) + minPeople;
-
-        randomPeoples.push(staticPeoples(randomPeopleNum));
+        randomPeoples.push(staticPeoples[randomPeopleNum]);
     }
 
     //Math.floor(Math.random() * (max - min + 1)) + min;

@@ -25,12 +25,14 @@ import {
   timing,
 } from 'react-native-redash';
 
+import { screenDimensions } from '../Helpers/Orientation';
+
 const CardMainScreen = (props) => {
   const [item] = useState(props.item);
   const [pairOrOdd] = useState(props.pairOrOdd);
   const COLOR = pairOrOdd ? `#e30092` : `#fc3a52`;
   const navigation = useNavigation();
-  const CARD_WIDTH = Dimensions.get('screen').width;
+  const CARD_WIDTH = screenDimensions().width;
   const CARD_HEIGHT = 200;
   const CIRCLE_RADIUS = CARD_HEIGHT - 50;
 
@@ -67,7 +69,7 @@ const CardMainScreen = (props) => {
 
   useCode(() => block([
     cond(
-      eq(tapState, State.END),
+      eq(tapState, State.BEGAN),
       call([],
         () => (navigation.navigate(`${item.navigation}`))
       )
