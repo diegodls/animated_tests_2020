@@ -18,13 +18,13 @@ const CONTAINER_WIDTH = WINDOW_WIDTH;
 
 const FlatListScreen = () => {
 
-    const obj = generatePosts(50);
+    const obj = generatePosts(10);
 
     /* START - COMPONENTS STUFF */
 
     const StatusBar = styled.StatusBar``;
 
-    const Container = styled.SafeAreaView`
+    const Container = styled.View`
     height: ${CONTAINER_HEIGHT}px; 
     width: ${CONTAINER_WIDTH}px; 
     background-color: ${BACKGROUND_COLOR};
@@ -50,6 +50,7 @@ const FlatListScreen = () => {
             <ReloadButtonStyled />
             <Container>
                 <AnimatedFlatList
+                
                     //style={{ backgroundColor: '#000' }}
                     showsVerticalScrollIndicator={false}
                     scrollEventThrottle={16}
