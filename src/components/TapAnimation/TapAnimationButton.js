@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import {
     View,
     StyleSheet,
-    ToastAndroid
+    Alert
 } from 'react-native';
 import Animated, {
     interpolate,
@@ -64,11 +64,9 @@ const ButtonInter = ({ icon }) => {
     useCode(() => block([
         cond(eq(transition, 1),
             call([], () => (
-                ToastAndroid.showWithGravity(`Clicou em: ${icon}`,
-                    ToastAndroid.SHORT,
-                    ToastAndroid.BOTTOM
-                )
-            ))),
+                Alert.alert('Opa!', `Você clicou no: ${icon}`)
+            )
+            )),
 
     ]), [tapState]);
 

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { Dimensions } from 'react-native'
 import styled from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
 import Animated, {

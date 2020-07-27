@@ -5,6 +5,8 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 import Animated, { useCode, cond, eq, call, block } from 'react-native-reanimated';
 import { mix } from 'react-native-redash';
 
+IconEntypo.loadFont();
+
 const ButtonLongTap = ({ progress, rd, bg, fg, stroke_w }) => {
     const [isActive, setIsActive] = useState(false);
 

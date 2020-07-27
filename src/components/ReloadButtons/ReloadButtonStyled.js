@@ -3,6 +3,8 @@ import {NativeModules, DevSettings } from 'react-native';
 import styled from 'styled-components'
 import IconFA from 'react-native-vector-icons/FontAwesome';
 
+IconFA.loadFont();
+
 const ReloadButtonStyled = () => {
 
     const Container = styled.View`
@@ -31,3 +33,5 @@ const ReloadButtonStyled = () => {
 };
 
 export default ReloadButtonStyled;
+
+
