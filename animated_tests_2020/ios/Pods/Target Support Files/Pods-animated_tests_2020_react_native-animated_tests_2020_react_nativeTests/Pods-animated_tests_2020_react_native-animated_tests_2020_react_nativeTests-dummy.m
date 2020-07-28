@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_animated_tests_2020_react_native_animated_tests_2020_react_nativeTests : NSObject
+@end
+@implementation PodsDummy_Pods_animated_tests_2020_react_native_animated_tests_2020_react_nativeTests
+@end

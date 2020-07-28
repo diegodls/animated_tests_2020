@@ -1,0 +1,6 @@
+module Pods_animated_tests_2020_react_native {
+  umbrella header "Pods-animated_tests_2020_react_native-umbrella.h"
+
+  export *
+  module * { export * }
+}
