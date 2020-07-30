@@ -14,6 +14,10 @@ const MainScreen = () => {
 
   const StatusBar = styled.StatusBar``;
 
+  const Text = styled.Text`
+    color: red;
+    `;
+
   const Container = styled.SafeAreaView`
     flex: 1;
     justify-content: center;
@@ -35,6 +39,7 @@ const MainScreen = () => {
       <StatusBar barStyle={'light-content'} backgroundColor={BACKGROUND_COLOR} />
       <ReloadButtonStyled />
       <Container>
+        <Text>Nota: após atualizações, alguns códigos ficaram quebrados, em breve serão corrigidos</Text>
         <FlatList
           style={{ flex: 1, width: '100%' }}
           showVerticalScrollIndicator={false}
@@ -52,3 +57,4 @@ const MainScreen = () => {
 };
 export default MainScreen;
 
+//Nota: depois da atualização de alguns módulos, partes dos códigos quebraram, em breve serão corrigidos...

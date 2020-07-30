@@ -68,7 +68,7 @@ const CardMainScreen = (props) => {
 
   useCode(() => block([
     cond(
-      eq(tapState, State.BEGAN),
+      eq(tapState, State.END),
       call([],
         () => (navigation.navigate(`${item.navigation}`))
       )

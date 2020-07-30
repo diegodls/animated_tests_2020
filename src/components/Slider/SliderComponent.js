@@ -13,7 +13,7 @@ const SLIDER_WIDTH = width - 100;
 const SLIDER_HEIGHT = 50;
 
 
-const Slider = () => {
+const Slider = ({onPress}) => {
 
     /* START - ANIMATION STUFF */
 
@@ -35,7 +35,7 @@ const Slider = () => {
     const value = round(multiply(divide(x, SLIDER_WIDTH), 100));
     const text = concat(value);
 
-    //usecode abaixo para quando soltar o icone, setar o valor de onde parou, pode usar essa valor para outras coisas
+    //usecode abaixo para quando soltar o ícone, setar o valor de onde parou, pode usar essa valor para outras coisas
     useCode(
         () => cond(
             eq(state, State.END),
@@ -47,8 +47,10 @@ const Slider = () => {
 
     /* START - JAVASCRIPT STUFF */
     function simpleFunction(value) {
-        //use esta função para quaisquer fins   
-        console.log(value)   ;
+        //use esta função para quaisquer fins  
+        // 
+        onPress !== undefined ? onPress(value[0]) : console.log(onPress);        
+        console.log(value[0]);
     }
     /* END - JAVASCRIPT STUFF */
 
@@ -123,10 +125,3 @@ const Slider = () => {
     )
 };
 export default Slider;
-
-
-/*resposta
-https://www.youtube.com/watch?v=D2p26Cgj40I
-Awesome video as always. I use width, not scaleX and have the same result
-and i don't have to use the trick with the small ball overlay, as the icon is above the bar , is better use scaleX or width?
-*/

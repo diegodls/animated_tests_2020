@@ -12,6 +12,8 @@ import TapAnimation from '../components/TapAnimation/TapAnimationScreen';
 import TabOrderScreen from '../components/TabOrder/TabOrderScreen';
 import LongTapScreen from '../components/LongPress/LongTapScreen';
 import SwipeToRemove from '../components/SwipeToRemove/SwipeToRemoveScreen';
+import Blur from '../components/Blur/BlurScreen';
+import TestesScreen from '../components/Testes/TestesScreen';
 
 
 //criação da stack principal
@@ -78,6 +80,20 @@ export default function MyStack() {
                     component={SwipeToRemove}
                     options={{
                         title: 'SwipeToRemove'
+                    }}
+                />
+                <Stack.Screen
+                    name='Blur'
+                    component={Blur}
+                    options={{
+                        title: 'Blur'
+                    }}
+                />
+                <Stack.Screen
+                    name='TestesScreen'
+                    component={TestesScreen}
+                    options={{
+                        title: 'TestesScreen'
                     }}
                 />
             </Stack.Navigator>
