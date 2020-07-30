@@ -1,4 +1,6 @@
-import React, {useEffect} from 'react';
+//este efeito é melhor utilizado em listas fixas, uma vez que a lista é atualizada a cada adição.
+
+import React from 'react';
 import {
   View,
   StyleSheet,
@@ -8,8 +10,6 @@ import {
 } from 'react-native';
 import Animated, {
   concat,
-  divide,
-  Extrapolate,
   interpolate,
   multiply,
   round,
@@ -19,7 +19,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import {delay, ReText, timing} from 'react-native-redash';
 
-const Scale = ({index, item}) => {
+const Scale = ({item, index}) => {
   //FUNCTIONS
   function click() {
     Alert.alert(`Opa = ${index}`, 'Olha esse dedo ai!');
@@ -33,38 +33,40 @@ const Scale = ({index, item}) => {
 
   const scale = interpolate(progress, {
     inputRange: [0, 0.5, 1],
-    outputRange: [0, 1.1, 1],
-    extrapolate: Extrapolate.CLAMP,
+    outputRange: [0, 1.05, 1],
   });
 
-  useCode(() => set(progress, timing({duration: 500})), [progress]);
+
+  useCode(() => set(progress, timing({duration: 500 + index * 100})), [
+    progress,
+  ]);
 
   return (
-    <>
-      <Animated.View
-        style={{
-          alignItems: 'center',
-          transform: [{scale}],
-        }}>
-        <TouchableWithoutFeedback onPress={click}>
-          <View style={styles.container}>
-            <View style={styles.idContainer}>
-              <Text style={styles.idText}>{index}</Text>
-            </View>
-            <View style={styles.progressContainer}>
-              <Text style={styles.progressText}>Progress</Text>
-              <ReText text={text} style={styles.progressText} />
-            </View>
+    <Animated.View
+      key={item.id}
+      style={{
+        alignItems: 'center',
+        transform: [{scale}],
+      }}>
+      <TouchableWithoutFeedback onPress={click}>
+        <View style={styles.container}>
+          <View style={styles.idContainer}>
+            <Text style={styles.idText}>{item.id}</Text>
+            <ReText text={text} style={styles.progressText} />
           </View>
-        </TouchableWithoutFeedback>
-      </Animated.View>
-    </>
+          <View style={styles.progressContainer}>
+            <Text style={styles.progressText}>Nome: {item.nome}</Text>
+            <Text style={styles.progressText}>Sobrenome: {item.sobreNome}</Text>
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
+    </Animated.View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
+    width: '95%',
     height: 60,
     borderRadius: 8,
     backgroundColor: '#040408',
@@ -81,14 +83,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  idText: {    
+  idText: {
     fontWeight: 'bold',
     fontSize: 30,
     color: '#FFF',
   },
   progressContainer: {
     flex: 1,
-    alignItems: 'center',
+    paddingLeft: 10,
   },
   progressText: {
     color: '#FFF',
