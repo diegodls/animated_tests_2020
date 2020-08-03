@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 //import das telas usadas na navegação
 import MainScreen from '../MainScreen/MainScreen';
@@ -13,90 +13,97 @@ import TabOrderScreen from '../components/TabOrder/TabOrderScreen';
 import LongTapScreen from '../components/LongPress/LongTapScreen';
 import SwipeToRemove from '../components/SwipeToRemove/SwipeToRemoveScreen';
 import Blur from '../components/Blur/BlurScreen';
-import TestesScreen from '../components/Testes/TestesScreen';
-
+import FlexAccordion from '../components/FlexAccordion/FlexAccordionScreen';
+import Testes from '../components/Testes/TestesScreen';
 
 //criação da stack principal
 const Stack = createStackNavigator();
 
 export default function MyStack() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator
-                screenOptions={{
-                    headerShown: false,
-                }}>
-                <Stack.Screen
-                    name='MainScreen'
-                    component={MainScreen}
-                    options={{
-                        title: 'MainScreen'
-                    }}
-                />
-                <Stack.Screen
-                    name='DragDropScreen'
-                    component={DragDropScreen}
-                    options={{
-                        title: 'DragDropScreen'
-                    }}
-                />
-                <Stack.Screen
-                    name='SliderScreen'
-                    component={SliderScreen}
-                    options={{
-                        title: 'SliderScreen'
-                    }}
-                />
-                <Stack.Screen
-                    name='FlatListWalletScreen'
-                    component={FlatListWalletScreen}
-                    options={{
-                        title: 'FlatListWalletScreen'
-                    }}
-                />
-                <Stack.Screen
-                    name='TapAnimation'
-                    component={TapAnimation}
-                    options={{
-                        title: 'Tap Animation'
-                    }}
-                />
-                <Stack.Screen
-                    name='TabOrderScreen'
-                    component={TabOrderScreen}
-                    options={{
-                        title: 'TabOrderScreen'
-                    }}
-                />
-                <Stack.Screen
-                    name='LongTapScreen'
-                    component={LongTapScreen}
-                    options={{
-                        title: 'LongTapScreen'
-                    }}
-                />
-                <Stack.Screen
-                    name='SwipeToRemove'
-                    component={SwipeToRemove}
-                    options={{
-                        title: 'SwipeToRemove'
-                    }}
-                />
-                <Stack.Screen
-                    name='Blur'
-                    component={Blur}
-                    options={{
-                        title: 'Blur'
-                    }}
-                />
-                <Stack.Screen
-                    name='TestesScreen'
-                    component={TestesScreen}
-                    options={{
-                        title: 'TestesScreen'
-                    }}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen
+          name="MainScreen"
+          component={MainScreen}
+          options={{
+            title: 'MainScreen',
+          }}
+        />
+        <Stack.Screen
+          name="DragDropScreen"
+          component={DragDropScreen}
+          options={{
+            title: 'DragDropScreen',
+          }}
+        />
+        <Stack.Screen
+          name="SliderScreen"
+          component={SliderScreen}
+          options={{
+            title: 'SliderScreen',
+          }}
+        />
+        <Stack.Screen
+          name="FlatListWalletScreen"
+          component={FlatListWalletScreen}
+          options={{
+            title: 'FlatListWalletScreen',
+          }}
+        />
+        <Stack.Screen
+          name="TapAnimation"
+          component={TapAnimation}
+          options={{
+            title: 'Tap Animation',
+          }}
+        />
+        <Stack.Screen
+          name="TabOrderScreen"
+          component={TabOrderScreen}
+          options={{
+            title: 'TabOrderScreen',
+          }}
+        />
+        <Stack.Screen
+          name="LongTapScreen"
+          component={LongTapScreen}
+          options={{
+            title: 'LongTapScreen',
+          }}
+        />
+        <Stack.Screen
+          name="SwipeToRemove"
+          component={SwipeToRemove}
+          options={{
+            title: 'SwipeToRemove',
+          }}
+        />
+        <Stack.Screen
+          name="Blur"
+          component={Blur}
+          options={{
+            title: 'Blur',
+          }}
+        />
+        <Stack.Screen
+          name="FlexAccordion"
+          component={FlexAccordion}
+          options={{
+            title: 'FlexAccordionScreen',
+          }}
+        />
+        <Stack.Screen
+          name="TestesScreen"
+          component={Testes}
+          options={{
+            title: 'TestesScreen',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }

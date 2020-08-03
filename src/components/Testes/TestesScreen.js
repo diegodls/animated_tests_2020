@@ -60,7 +60,7 @@ const Testes = () => {
     setArrayTeste([
       ...arrayTeste,
       {
-        id: lastID ,
+        id: lastID,
         nome: data.firstName,
       },
     ]);
@@ -97,7 +97,7 @@ const Testes = () => {
             data={arrayTeste}
             keyExtractor={(item, _) => String(item.id)}
             renderItem={({item, index}) => (
-             <Scale key={item.id} item={item} index={index} />           
+              <Scale key={item.id} item={item} index={index} />
             )}
           />
         )}
@@ -120,7 +120,6 @@ const styles = StyleSheet.create({
     height: 140,
     flexDirection: 'row',
     marginBottom: 5,
-    
   },
   inputContainer: {
     flex: 1,
@@ -128,7 +127,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     marginRight: 10,
-  
   },
   textInput: {
     width: '100%',
@@ -150,16 +148,13 @@ const styles = StyleSheet.create({
   buttonText: {
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#FEFDFD', 
+    color: '#FEFDFD',
   },
   flatlist: {
     flex: 1,
     width: '100%',
-    
   },
-  flatlistContent: {
- 
-  },
+  flatlistContent: {},
   renderCount: {
     fontWeight: 'bold',
     fontSize: 20,

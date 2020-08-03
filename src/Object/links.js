@@ -2,8 +2,8 @@ export const links = [
   {
     id: 0,
     title: 'Testes',
-    subTitle: 'Bagunça',
-    navigation: 'TestesScreen',
+    subTitle: 'Playground',
+    navigation: 'Testes',
   },
   {
     id: 1,
@@ -50,8 +50,14 @@ export const links = [
   {
     id: 8,
     title: 'Blur',
-    subTitle: 'PanGesture',
+    subTitle: 'Transition',
     navigation: 'Blur',
+  },
+  {
+    id: 9,
+    title: 'FlexAccordion',
+    subTitle: 'Transition',
+    navigation: 'FlexAccordion',
   },
 ];
 
