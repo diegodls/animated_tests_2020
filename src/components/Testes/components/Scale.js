@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 //este efeito é melhor utilizado em listas fixas, uma vez que a lista é atualizada a cada adição.
 
 import React from 'react';
@@ -17,7 +18,9 @@ import Animated, {
   useCode,
   Value,
 } from 'react-native-reanimated';
-import {delay, ReText, timing} from 'react-native-redash';
+import {ReText, timing} from 'react-native-redash';
+
+import ClickEffect from './ClickEffect';
 
 const Scale = ({item, index}) => {
   //FUNCTIONS
@@ -36,31 +39,31 @@ const Scale = ({item, index}) => {
     outputRange: [0, 1.05, 1],
   });
 
-
   useCode(() => set(progress, timing({duration: 500 + index * 100})), [
     progress,
   ]);
 
   return (
-    <Animated.View
-      key={item.id}
-      style={{
-        alignItems: 'center',
-        transform: [{scale}],
-      }}>
-      <TouchableWithoutFeedback onPress={click}>
-        <View style={styles.container}>
-          <View style={styles.idContainer}>
-            <Text style={styles.idText}>{item.id}</Text>
-            <ReText text={text} style={styles.progressText} />
+    <ClickEffect>
+      <Animated.View
+        key={item.id}
+        style={{
+          alignItems: 'center',
+          transform: [{scale}],
+        }}>
+        <TouchableWithoutFeedback onPress={click}>
+          <View style={styles.container}>
+            <View style={styles.idContainer}>
+              <Text style={styles.idText}>{item.id}</Text>
+              <ReText text={text} style={styles.progressText} />
+            </View>
+            <View style={styles.progressContainer}>
+              <Text style={styles.progressText}>Nome: {item.nome}</Text>
+            </View>
           </View>
-          <View style={styles.progressContainer}>
-            <Text style={styles.progressText}>Nome: {item.nome}</Text>
-            <Text style={styles.progressText}>Sobrenome: {item.sobreNome}</Text>
-          </View>
-        </View>
-      </TouchableWithoutFeedback>
-    </Animated.View>
+        </TouchableWithoutFeedback>
+      </Animated.View>
+    </ClickEffect>
   );
 };
 

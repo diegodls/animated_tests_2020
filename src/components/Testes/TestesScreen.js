@@ -15,6 +15,7 @@ import {useForm} from 'react-hook-form';
 //MY IMPORTS
 import ReloadButton from '../ReloadButtons/ReloadButton';
 import Scale from './components/Scale';
+import ClickEffect from './components/ClickEffect';
 
 //MY CONST
 
@@ -29,37 +30,41 @@ const Testes = () => {
 
   //USE_EFFECTS
 
-  useEffect(() => {
-    let quant = 5;
-    let tempArray = [];
+  // useEffect(() => {
+  //   let quant = 5;
+  //   let tempArray = [];
 
-    for (let i = 0; i <= quant; i++) {
-      tempArray.push({
-        id: i,
-        nome: 'A',
-        sobreNome: 'A',
-      });
-    }
-    setArrayTeste(tempArray);
-    setLoaded(true);
-  }, []);
+  //   for (let i = 0; i <= quant; i++) {
+  //     tempArray.push({
+  //       id: i,
+  //       nome: 'A',
+
+  //     });
+  //   }
+  //   setArrayTeste(tempArray);
+  //   setLoaded(true);
+  // }, []);
 
   useEffect(() => {
     register('firstName');
-    register('lastName');
   }, [register]);
 
   //FUNCTIONS
   function onSubmit(data) {
-    const lastID = arrayTeste[arrayTeste.length - 1].id;
+    let lastID = 0;
+
+    if (arrayTeste.length > 0) {
+      lastID = arrayTeste[arrayTeste.length - 1].id + 1;
+    }
+
     setArrayTeste([
       ...arrayTeste,
       {
-        id: lastID + 1,
+        id: lastID ,
         nome: data.firstName,
-        sobreNome: data.lastName,
       },
     ]);
+    setLoaded(true);
   }
 
   renderCount++;
@@ -75,17 +80,14 @@ const Testes = () => {
               style={styles.textInput}
               onChangeText={(text) => setValue('firstName', text)}
             />
-            <TextInput
-              placeholder={'Sobrenome'}
-              style={styles.textInput}
-              onChangeText={(text) => setValue('lastName', text)}
-            />
           </View>
-          <TouchableWithoutFeedback onPress={handleSubmit(onSubmit)}>
-            <View style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>Salvar</Text>
-            </View>
-          </TouchableWithoutFeedback>
+          <ClickEffect>
+            <TouchableWithoutFeedback onPress={handleSubmit(onSubmit)}>
+              <View style={styles.buttonContainer}>
+                <Text style={styles.buttonText}>Salvar</Text>
+              </View>
+            </TouchableWithoutFeedback>
+          </ClickEffect>
         </View>
         <Text style={styles.renderCount}>Renders: {renderCount}</Text>
         {loaded && (
@@ -94,7 +96,9 @@ const Testes = () => {
             contentContainerStyle={styles.flatlistContent}
             data={arrayTeste}
             keyExtractor={(item, _) => String(item.id)}
-            renderItem={({item, index}) => <Scale key={item.id} item={item} index={index} />}
+            renderItem={({item, index}) => (
+             <Scale key={item.id} item={item} index={index} />           
+            )}
           />
         )}
       </View>
@@ -116,7 +120,7 @@ const styles = StyleSheet.create({
     height: 140,
     flexDirection: 'row',
     marginBottom: 5,
-    //backgroundColor: '#F0C'
+    
   },
   inputContainer: {
     flex: 1,
@@ -124,14 +128,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     marginRight: 10,
-    // backgroundColor: '#CF0'
+  
   },
   textInput: {
     width: '100%',
     height: 60,
     borderRadius: 8,
-    //borderWidth: 1,
-    borderColor: '#040408',
     backgroundColor: '#FEFDFD',
     padding: 10,
     fontSize: 18,
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: 100,
-    height: '100%',
+    height: 60,
     borderRadius: 8,
     borderColor: '#040408',
     backgroundColor: '#E11905',
@@ -148,16 +150,15 @@ const styles = StyleSheet.create({
   buttonText: {
     fontWeight: 'bold',
     fontSize: 20,
-    color: '#FEFDFD',
-    bottom: 10,
+    color: '#FEFDFD', 
   },
   flatlist: {
     flex: 1,
     width: '100%',
-    //backgroundColor: '#F0C',
+    
   },
   flatlistContent: {
-    //backgroundColor: '#0FC',
+ 
   },
   renderCount: {
     fontWeight: 'bold',

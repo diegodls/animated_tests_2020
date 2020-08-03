@@ -1,23 +1,22 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {State, TapGestureHandler} from 'react-native-gesture-handler';
+import Animated, {eq, Value} from 'react-native-reanimated';
+import {mix, onGestureEvent, withSpringTransition} from 'react-native-redash';
 
-const Click = () => {
+const Click = ({children}) => {
+  const state = new Value(State.UNDETERMINED);
+  const gestureHandler = onGestureEvent({state});
+  const progress = withSpringTransition(eq(state, State.BEGAN));
+  const scale = mix(progress, 1, 1.2);
   return (
-    <>
-      <View style={styles.container}>
-        <Text>Click</Text>
-      </View>
-    </>
+    <TapGestureHandler {...gestureHandler}>
+      <Animated.View
+        style={{
+          transform: [{scale}],
+        }}>
+        {children}
+      </Animated.View>
+    </TapGestureHandler>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F0C',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
 export default Click;

@@ -25,7 +25,7 @@ const LongTapScreen = () => {
 
     // const progress = new Value(0);
     // useCode(() => set(progress, timing({ duration: 10000 })), [progress]);
-    //parei 19: 11
+
     return (<>
         <StatusBar barStyle={'dark-content'} backgroundColor={BACKGROUND_COLOR} />
         <ReloadButton />
