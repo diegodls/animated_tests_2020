@@ -53,12 +53,6 @@ export const links = [
     subTitle: 'Transition',
     navigation: 'Blur',
   },
-  {
-    id: 9,
-    title: 'FlexAccordion',
-    subTitle: 'Transition',
-    navigation: 'FlexAccordion',
-  },
 ];
 
 export default links;

@@ -13,7 +13,6 @@ import TabOrderScreen from '../components/TabOrder/TabOrderScreen';
 import LongTapScreen from '../components/LongPress/LongTapScreen';
 import SwipeToRemove from '../components/SwipeToRemove/SwipeToRemoveScreen';
 import Blur from '../components/Blur/BlurScreen';
-import FlexAccordion from '../components/FlexAccordion/FlexAccordionScreen';
 import Testes from '../components/Testes/TestesScreen';
 
 //criação da stack principal
@@ -87,13 +86,6 @@ export default function MyStack() {
           component={Blur}
           options={{
             title: 'Blur',
-          }}
-        />
-        <Stack.Screen
-          name="FlexAccordion"
-          component={FlexAccordion}
-          options={{
-            title: 'FlexAccordionScreen',
           }}
         />
         <Stack.Screen
